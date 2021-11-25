@@ -2,8 +2,8 @@
 layout: default
 title: Blog
 ---
-foo
-<div class="posts">
+
+div class="posts">
   {% for post in paginator.posts %}
     <article class="post">
       <a href="{{ site.baseurl }}{{ post.url }}">
@@ -16,7 +16,7 @@ foo
       <div class="entry">
         {{ post.excerpt }}
       </div>
-	  <a href="{{ '/' | relative_url }}">{{ page }}</a>
+
       <a href="{{ site.baseurl }}{{ post.url }}" class="read-more">Read More</a>
     </article>
   {% endfor %}
@@ -34,7 +34,6 @@ foo
 		{% if page == paginator.page %}
 		<em>{{ page }}</em>
 		{% elsif page == 1 %}
-		<a href="{{ '/' | relative_url }}">{{ page }}</a>
 		<a href="{{ site.paginate_path | relative_url | replace: 'page:num/', '' }}">{{ page }}</a>
 		{% else %}
 		<a href="{{ site.paginate_path | relative_url | replace: ':num', page }}">{{ page }}</a>
